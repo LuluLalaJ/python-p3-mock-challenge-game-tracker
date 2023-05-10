@@ -3,10 +3,8 @@ class Player:
     all = []
 
     def __init__(self, username):
-        if isinstance(username, str) and 2 <= len(username) <= 16:
-            self._username = username
-        else:
-            raise Exception('Usernames must be strings between 2 and 16 characters, inclusive.')
+        #this is how you invoke setter in __init__
+        self.username = username
         self._results = []
         self._games_played = []
 

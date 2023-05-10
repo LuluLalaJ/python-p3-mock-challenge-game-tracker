@@ -5,20 +5,19 @@ class Result:
     all = []
 
     def __init__(self, player, game, score):
-        if (isinstance(player, Player)):
-            self._player = player
-        else:
-            raise Exception("the player is not an instance of Player class")
+        self.player = player
+        self.game = game
+        # if (isinstance(player, Player)):
+        #     self._player = player
+        # else:
+        #     raise Exception("the player is not an instance of Player class")
 
-        if (isinstance(game, Game)):
-            self._game = game
-        else:
-            raise Exception('the game is not an instance of Game class')
+        # if (isinstance(game, Game)):
+        #     self._game = game
+        # else:
+        #     raise Exception('the game is not an instance of Game class')
 
-        if 1 <= score <= 5000:
-            self._score = score
-        else:
-            raise Exception("the score must be integers between 1 and 5000, inclusive")
+        self.score = score
 
     #why do we have to call them here?
         player.results(self)
@@ -56,3 +55,10 @@ class Result:
     @property
     def score(self):
         return self._score
+
+    @score.setter
+    def score(self, score):
+        if 1 <= score <= 5000:
+            self._score = score
+        else:
+            raise Exception("the score must be integers between 1 and 5000, inclusive")
